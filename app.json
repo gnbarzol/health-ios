@@ -14,11 +14,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gary.barzola.my-app-health"
     },
     "android": {
       "adaptiveIcon": {
@@ -28,6 +27,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "react-native-health",
+        {
+          "isClinicalDataEnabled": true,
+          "healthSharePermission": "Allow $(PRODUCT_NAME) to check health info",
+          "healthUpdatePermission": "Allow $(PRODUCT_NAME) to update health info"
+        }
+      ]
+    ]
   }
 }
